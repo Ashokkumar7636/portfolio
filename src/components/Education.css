@@ -9,6 +9,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .education-title {
@@ -16,6 +17,10 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
+  background: linear-gradient(to right, #9b59b6, #ff69b4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .education-list {
@@ -26,21 +31,67 @@
 
 .education-item {
   background-color: #2d3748;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid #9c4ef6; /* Left accent line for a modern card look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .education-degree {
   font-size: 20px;
   font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
 .education-institution {
   font-size: 16px;
-  color: #a0aec0;
+  color: #cbd5e1;
+  margin-bottom: 4px;
 }
 
 .education-year {
   font-size: 14px;
-  color: #718096;
+  color: #ff69b4; /* Highlight year with pink theme color */
+  font-weight: 500;
+}
+
+/* ==========================================
+   Mobile Responsive View (768px and below)
+   ========================================== */
+@media (max-width: 768px) {
+  .education-section {
+    padding: 40px 0;
+  }
+
+  .education-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .education-list {
+    gap: 16px;
+  }
+
+  .education-item {
+    padding: 16px 18px;
+    border-radius: 8px;
+  }
+
+  .education-degree {
+    font-size: 18px;
+  }
+
+  .education-institution {
+    font-size: 14px;
+  }
+
+  .education-year {
+    font-size: 13px;
+  }
 }

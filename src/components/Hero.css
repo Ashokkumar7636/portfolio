@@ -5,31 +5,46 @@
   justify-content: center;
   align-items: center;
   background-color: #1e293b;
-}
-.hero-image{
-  height: 400px;
-  width: 300px;
+  padding: 100px 20px 40px 20px; /* Top padding to avoid navbar overlap */
+  box-sizing: border-box;
 }
 
 .hero-container {
   max-width: 1200px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+  align-items: center;
+}
+
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px;
-  text-align: center;
+  gap: 24px;
+  text-align: left; /* Desktop text alignment */
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 56px;
   font-weight: bold;
   color: white;
+  line-height: 1.1;
 }
 
 .highlight {
@@ -37,8 +52,9 @@
 }
 
 .hero-subtitle {
-  font-size: 24px;
+  font-size: 22px;
   color: #cbd5e1;
+  line-height: 1.5;
 }
 
 .hero-buttons {
@@ -46,18 +62,22 @@
   gap: 16px;
 }
 
-.hero-btn, .secondary-btn {
-  padding: 16px 32px;
+.hero-btn, 
+.secondary-btn {
+  padding: 14px 28px;
   border-radius: 999px;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .hero-btn {
   background-color: #9c4ef6;
   color: white;
+  border: none;
 }
 
 .hero-btn:hover {
@@ -73,4 +93,49 @@
 .secondary-btn:hover {
   background-color: #9c4ef6;
   color: white;
+}
+
+/* ==========================================
+   Mobile Responsive View (768px and below)
+   ========================================== */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 100px 16px 40px 16px; /* Navbar clearance */
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr; /* Switch to single column on mobile */
+    gap: 32px;
+  }
+
+  .hero-content {
+    text-align: center; /* Center-align content for mobile layout */
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 36px; /* Scaled down title size for mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-image {
+    height: 300px;
+    width: 220px; /* Proportionally resized image for small screens */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-btn, 
+  .secondary-btn {
+    width: 100%; /* Full width buttons for easy mobile tapping */
+    box-sizing: border-box;
+  }
 }

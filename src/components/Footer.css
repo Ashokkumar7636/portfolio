@@ -1,16 +1,33 @@
 /* Footer.css */
 .footer {
   background-color: #1e293b;
-  padding: 20px 0;
+  padding: 24px 0;
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top divider line */
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .footer-text {
   font-size: 14px;
   color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   Mobile Responsive View (768px and below)
+   ========================================== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px 0;
+  }
+
+  .footer-text {
+    font-size: 13px; /* Slightly smaller text for mobile screens */
+  }
 }

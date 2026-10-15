@@ -8,6 +8,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .contact-header {
@@ -34,7 +35,7 @@
 }
 
 .form-container {
-  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
   padding: 32px;
   border-radius: 16px;
 }
@@ -48,6 +49,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .label {
@@ -55,12 +57,16 @@
   color: #cbd5e1;
 }
 
-.input, .textarea {
+.input,
+.textarea {
   background-color: #1f2937;
   border: 1px solid #4b5563;
   padding: 12px;
   border-radius: 8px;
   color: white;
+  font-size: 16px; /* Prevents auto-zoom on iOS safari */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .textarea {
@@ -76,6 +82,8 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.3s;
+  font-size: 16px;
+  width: 100%; /* Mobile friendly full-width button */
 }
 
 .submit-btn:hover {
@@ -83,7 +91,7 @@
 }
 
 .contact-info {
-  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
   padding: 32px;
   border-radius: 16px;
 }
@@ -92,11 +100,13 @@
   font-size: 24px;
   font-weight: bold;
   color: white;
+  margin-bottom: 8px;
 }
 
 .contact-desc {
   color: #cbd5e1;
   margin-bottom: 24px;
+  line-height: 1.5;
 }
 
 .contact-links {
@@ -111,6 +121,7 @@
   color: #cbd5e1;
   text-decoration: none;
   transition: color 0.3s;
+  word-break: break-word; /* Long emails break smoothly on mobile */
 }
 
 .contact-link:hover {
@@ -119,4 +130,35 @@
 
 .contact-link span {
   margin-left: 8px;
+}
+
+/* ==========================================
+   Mobile Responsive View (768px and below)
+   ========================================== */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+    gap: 24px;
+  }
+
+  .form-container,
+  .contact-info {
+    padding: 20px 16px; /* Reduced padding for smaller screens */
+  }
+
+  .contact-title {
+    font-size: 20px;
+  }
+
+  .contact-desc {
+    font-size: 14px;
+  }
 }
