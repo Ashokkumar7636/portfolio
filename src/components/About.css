@@ -1,0 +1,87 @@
+/* About.css */
+.about-section {
+    padding: 80px 0;
+    background-color: #1e293b;
+
+  }
+  
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+  }
+  
+  .card-gradient {
+  background-color: #2d3748;
+    border-radius: 24px;
+    padding: 48px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .section-header h2 {
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(to right, #9b59b6, #ff69b4);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  
+  .card .text {
+    font-size: 18px;
+    color: #fff;
+
+  }
+  
+  .card .details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #fff;
+  }
+  
+  .card .details {
+    display: flex;
+    /* align-items: center; */
+    gap: 12px;
+    color: #ff69b4;
+    font-size: larger;  
+  }
+  
+  .card .statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 24px; */
+  }
+  
+  .card .statistics .stat {
+    background: linear-gradient(145deg, #4c4c4c, #2a2a2a);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  
+  .card .statistics .stat h3 {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, #9b59b6, #ff69b4);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .card .statistics .stat p {
+    color: #b0b0b0;
+  }
+  
